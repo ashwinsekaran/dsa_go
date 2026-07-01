@@ -15,11 +15,11 @@ go run slidingwindow/maxium_sum_subarray/main.go
 
 | # | Problem | Difficulty | File | Approach |
 |---|---------|------------|------|----------|
-| — | Maximum Sum Subarray of Size K | Easy | [slidingwindow/maxium_sum_subarray/main.go](slidingwindow/maxium_sum_subarray/main.go) | Fixed window — slide by adding entering element, removing leaving element |
-| 1423 | Maximum Points You Can Obtain from Cards | Medium | [slidingwindow/maximum_points_cards/main.go](slidingwindow/maximum_points_cards/main.go) | Fixed window on the complement — minimize sum of the middle `n-k` elements |
-| 2461 | Maximum Sum of Distinct Subarrays With Length K | Medium | [slidingwindow/maximum_distinct_sum_subarray/main.go](slidingwindow/maximum_distinct_sum_subarray/main.go) | Fixed window + frequency map — only count windows with all-distinct elements |
-| 3 | Longest Substring Without Repeating Characters | Medium | [dynamic_slidingwindow/longest_substr_without_repeat/main.go](dynamic_slidingwindow/longest_substr_without_repeat/main.go) | Variable window — shrink from left on repeat until unique again |
-| 904 | Fruit Into Baskets | Medium | [dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go](dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go) | Variable window — shrink from left while more than 2 distinct fruit types |
+| — | Maximum Sum Subarray of Size K | Easy | [slidingwindow/maxium_sum_subarray/main.go](slidingwindow/maxium_sum_subarray/main.go) | Fixed window |
+| 1423 | Maximum Points You Can Obtain from Cards | Medium | [slidingwindow/maximum_points_cards/main.go](slidingwindow/maximum_points_cards/main.go) | Fixed window on complement |
+| 2461 | Maximum Sum of Distinct Subarrays With Length K | Medium | [slidingwindow/maximum_distinct_sum_subarray/main.go](slidingwindow/maximum_distinct_sum_subarray/main.go) | Fixed window + freq map |
+| 3 | Longest Substring Without Repeating Characters | Medium | [dynamic_slidingwindow/longest_substr_without_repeat/main.go](dynamic_slidingwindow/longest_substr_without_repeat/main.go) | Variable window |
+| 904 | Fruit Into Baskets | Medium | [dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go](dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go) | Variable window |
 
 ---
 
