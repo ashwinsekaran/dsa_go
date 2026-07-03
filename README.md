@@ -1,6 +1,6 @@
 # sliding_window_go
 
-5 sliding window problems, each in its own folder as a standalone `package main`.
+6 problems, each in its own folder as a standalone `package main`.
 
 **Run any problem:**
 ```bash
@@ -20,6 +20,7 @@ go run slidingwindow/maxium_sum_subarray/main.go
 | 2461 | Distinct Subarray | Medium | [slidingwindow/maximum_distinct_sum_subarray/main.go](slidingwindow/maximum_distinct_sum_subarray/main.go) | Fixed window + freq map |
 | 3 | Longest Substring | Medium | [dynamic_slidingwindow/longest_substr_without_repeat/main.go](dynamic_slidingwindow/longest_substr_without_repeat/main.go) | Variable window |
 | 904 | Fruit Baskets | Medium | [dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go](dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go) | Variable window |
+| 11 | Container With Water | Medium | [2pointers/container_with_most_water/main.go](2pointers/container_with_most_water/main.go) | Two pointers |
 
 ---
 
@@ -64,4 +65,12 @@ basket[fruits[end]]++
 if len(basket) > 2:
   basket[fruits[start]]--; delete if zero; start++
 maxFruit = max(maxFruit, end-start+1)
+```
+
+### Container With Most Water
+```
+left, right = 0, len(heights)-1
+area = min(heights[left], heights[right]) * (right - left)
+advance the pointer at the shorter height
+return max area seen
 ```
