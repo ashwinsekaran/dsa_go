@@ -1,6 +1,6 @@
-# sliding_window_go
+# dsa_go
 
-6 problems, each in its own folder as a standalone `package main`.
+DSA patterns and algorithms in Go — 8 problems, each in its own folder as a standalone `package main`.
 
 **Run any problem:**
 ```bash
@@ -21,6 +21,8 @@ go run slidingwindow/maxium_sum_subarray/main.go
 | 3 | Longest Substring | Medium | [dynamic_slidingwindow/longest_substr_without_repeat/main.go](dynamic_slidingwindow/longest_substr_without_repeat/main.go) | Variable window |
 | 904 | Fruit Baskets | Medium | [dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go](dynamic_slidingwindow/variable_sliding_window_fruits_baskets/main.go) | Variable window |
 | 11 | Container With Water | Medium | [2pointers/container_with_most_water/main.go](2pointers/container_with_most_water/main.go) | Two pointers |
+| — | Pair Target Sum | Easy | [2pointers/pair_nums_to_find_a_sum/main.go](2pointers/pair_nums_to_find_a_sum/main.go) | Two pointers on sorted array |
+| 252 | Meeting Rooms | Easy | [intervals/attend_meetings/main.go](intervals/attend_meetings/main.go) | Sort by start, check overlap |
 
 ---
 
@@ -73,4 +75,24 @@ left, right = 0, len(heights)-1
 area = min(heights[left], heights[right]) * (right - left)
 advance the pointer at the shorter height
 return max area seen
+```
+
+### Pair with Target Sum
+```
+sort(nums)
+left, right = 0, len(nums)-1
+while left < right:
+  sum = nums[left] + nums[right]
+  if sum == target: return true
+  if sum > target: right--
+  else: left++
+return false
+```
+
+### Meeting Rooms
+```
+sort intervals by start time
+for i in 1..n-1:
+  if intervals[i].start < intervals[i-1].end: return false
+return true
 ```
