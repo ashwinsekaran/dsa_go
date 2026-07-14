@@ -1,6 +1,6 @@
 # dsa_go
 
-DSA patterns and algorithms in Go — 8 problems, each in its own folder as a standalone `package main`.
+DSA patterns and algorithms in Go — 9 problems, each in its own folder as a standalone `package main`.
 
 **Run any problem:**
 ```bash
@@ -23,6 +23,7 @@ go run slidingwindow/maxium_sum_subarray/main.go
 | 11 | Container With Water | Medium | [2pointers/container_with_most_water/main.go](2pointers/container_with_most_water/main.go) | Two pointers |
 | — | Pair Target Sum | Easy | [2pointers/pair_nums_to_find_a_sum/main.go](2pointers/pair_nums_to_find_a_sum/main.go) | Two pointers on sorted array |
 | 252 | Meeting Rooms | Easy | [intervals/attend_meetings/main.go](intervals/attend_meetings/main.go) | Sort by start, check overlap |
+| 20 | Valid Parentheses | Easy | [stack/valid_parentheses/main.go](stack/valid_parentheses/main.go) | Stack matching |
 
 ---
 
@@ -95,4 +96,14 @@ sort intervals by start time
 for i in 1..n-1:
   if intervals[i].start < intervals[i-1].end: return false
 return true
+```
+
+### Valid Parentheses
+```
+for each char in s:
+  if open bracket: push onto stack
+  if close bracket:
+    if stack empty or top doesn't match: return false
+    pop stack
+return stack is empty
 ```
