@@ -1,6 +1,6 @@
 # dsa_go
 
-DSA patterns and algorithms in Go — 10 problems, each in its own folder as a standalone `package main`.
+DSA patterns and algorithms in Go — 13 problems, each in its own folder as a standalone `package main`.
 
 **Run any problem:**
 ```bash
@@ -25,6 +25,9 @@ go run slidingwindow/maxium_sum_subarray/main.go
 | 252 | Meeting Rooms | Easy | [intervals/attend_meetings/main.go](intervals/attend_meetings/main.go) | Sort by start, check overlap |
 | 20 | Valid Parentheses | Easy | [stack/valid_parentheses/main.go](stack/valid_parentheses/main.go) | Stack matching |
 | 206 | Reverse Linked List | Easy | [linked_list/reverse_ll/main.go](linked_list/reverse_ll/main.go) | Iterative pointer reversal |
+| 141 | Linked List Cycle | Easy | [linked_list/has_cycle/main.go](linked_list/has_cycle/main.go) | Visited-set traversal |
+| 234 | Palindrome Linked List | Easy | [linked_list/isPalindrome/main.go](linked_list/isPalindrome/main.go) | Find mid, reverse half, compare |
+| 21 | Merge Two Sorted Lists | Easy | [linked_list/merge2ll/main.go](linked_list/merge2ll/main.go) | Splice smaller node each step |
 
 ---
 
@@ -118,4 +121,31 @@ while current != nil:
   prev = current
   current = next
 return prev
+```
+
+### Linked List Cycle
+```
+visited = {}
+for node := head; node != nil; node = node.Next:
+  if visited[node]: return true
+  visited[node] = true
+return false
+```
+
+### Palindrome Linked List
+```
+slow, fast = head, head
+while fast != nil && fast.Next != nil:
+  slow = slow.Next; fast = fast.Next.Next
+reverse the list starting at slow -> prev
+walk head and prev together, comparing values; mismatch -> false
+```
+
+### Merge Two Sorted Lists
+```
+pick smaller head as start; advance that list
+while both lists non-empty:
+  attach smaller of l1.Val, l2.Val; advance that list
+attach whichever list remains
+return start
 ```
