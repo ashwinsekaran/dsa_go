@@ -1,6 +1,6 @@
 # dsa_go
 
-DSA patterns and algorithms in Go — 9 problems, each in its own folder as a standalone `package main`.
+DSA patterns and algorithms in Go — 10 problems, each in its own folder as a standalone `package main`.
 
 **Run any problem:**
 ```bash
@@ -24,6 +24,7 @@ go run slidingwindow/maxium_sum_subarray/main.go
 | — | Pair Target Sum | Easy | [2pointers/pair_nums_to_find_a_sum/main.go](2pointers/pair_nums_to_find_a_sum/main.go) | Two pointers on sorted array |
 | 252 | Meeting Rooms | Easy | [intervals/attend_meetings/main.go](intervals/attend_meetings/main.go) | Sort by start, check overlap |
 | 20 | Valid Parentheses | Easy | [stack/valid_parentheses/main.go](stack/valid_parentheses/main.go) | Stack matching |
+| 206 | Reverse Linked List | Easy | [linked_list/reverse_ll/main.go](linked_list/reverse_ll/main.go) | Iterative pointer reversal |
 
 ---
 
@@ -106,4 +107,15 @@ for each char in s:
     if stack empty or top doesn't match: return false
     pop stack
 return stack is empty
+```
+
+### Reverse Linked List
+```
+prev = nil; current = head
+while current != nil:
+  next = current.Next
+  current.Next = prev
+  prev = current
+  current = next
+return prev
 ```

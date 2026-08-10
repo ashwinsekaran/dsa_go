@@ -8,13 +8,15 @@ package main
 //   bracket is closed by the same type of bracket, in the correct order.
 //
 // Example:
-//   Input:  s = "(){({})}"
-//   Output: true
+//   Input:  s = "({({}))}"
+//   Output: false
 //
 //   Explanation:
 //   Every closing bracket matches the most recently opened bracket
 //   (LIFO order), so a stack tracks open brackets: push on open, pop
-//   and compare on close. Valid only if the stack empties by the end.
+//   and compare on close. After "({({}" the stack is (,{,( and the
+//   next ')' correctly pops '('; the following ')' then expects '('
+//   but finds '{' on top — a mismatch — so the string is invalid.
 //
 // Pseudo code:
 //   for each char in s:
@@ -25,8 +27,8 @@ package main
 //   return stack is empty
 
 func main() {
-	s := "(){({})}"
-	println(isValid(s)) // true
+	s := "({({}))}"
+	println(isValid(s)) // false
 }
 
 func isValid(s string) bool {
